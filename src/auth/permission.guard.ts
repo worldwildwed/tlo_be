@@ -1,5 +1,12 @@
 import { CanActivate, ExecutionContext, Injectable, ForbiddenException } from '@nestjs/common';
 
+export enum Role {
+  USER = 0,
+  ADMIN = 7,
+  SUPER = 8,
+  MASTER = 9
+}
+
 @Injectable()
 export class PermissionGuard implements CanActivate {
   canActivate(
