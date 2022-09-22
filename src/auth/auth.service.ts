@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { User } from '../entity/User';
-import { AppDataSource } from '../data-source'; 
+import { User } from '../entity/user.entity';
+import { AppDataSource } from '../utils/data-source'; 
 import { EmailDTO } from '../dto/auth.dto';
 import { JwtService } from '@nestjs/jwt';
 import { UserService } from '../user/user.service';

@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, Timestamp } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm"
+import { Agent } from "./agent.entity"
 
 
 
@@ -20,20 +21,23 @@ export class User {
     @Column()
     password: string
 
-    @Column()
+    @Column({ nullable: true, default: '' })
     phone: string
 
-    @Column({ nullable: true })
+    @Column({ nullable: true, default: '' })
     email: string
 
-    @Column({ nullable: true })
-    bankacc: string
+    // @Column({ nullable: true })
+    // bankacc: string
 
-    @Column({ nullable: true })
+    @Column({ nullable: true, default: ''  })
     firstName: string
 
-    @Column({ nullable: true })
+    @Column({ nullable: true, default: ''  })
     lastName: string
+
+    @ManyToOne(() => Agent, (agent) => agent.id)
+    agent: Agent
 
     @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP()" })
     createdAt: Date;
@@ -41,5 +45,6 @@ export class User {
     @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP()" })
     updatedAt: Date;
 
-    
+
 }
+

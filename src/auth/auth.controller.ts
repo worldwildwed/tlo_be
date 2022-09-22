@@ -25,7 +25,7 @@ export class AuthController {
         @Request() req
     ) {
         const user = req.user
-        console.log(user)
+        console.log('req.user', user)
         return this.authService.login(req.user)
     }
 

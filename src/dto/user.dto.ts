@@ -1,5 +1,6 @@
 import { ArrayMinSize, IsArray, IsBoolean, IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 import { Timestamp } from 'typeorm';
+import { Agent } from '../entity/agent.entity';
 
 export class UserDTO {
     @IsNumber()
@@ -51,8 +52,34 @@ export class UserDTO {
 export class RegisterDTO {
     public username: string;
     public password: string;
-    public phone: string;
-
+    public role: number
+    public agentId: Agent
     @IsOptional()
-    public bankacc: string;
+    public phone: string;
+    @IsOptional()
+    public firstName: string
+    @IsOptional()
+    public lastName: string
+}
+
+export class RegisterAgentDTO {
+    public name: string
+    @IsOptional()
+    public detail: string
+    @IsOptional()
+    public phone: string
+    @IsOptional()
+    public address: string
+}
+
+export class PostRegisterDTO {
+    public username: string
+    public password: string
+    public role: number
+    @IsOptional()
+    public phone: string;
+    @IsOptional()
+    public firstName: string
+    @IsOptional()
+    public lastName: string
 }
