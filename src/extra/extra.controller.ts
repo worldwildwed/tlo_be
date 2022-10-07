@@ -153,6 +153,32 @@ export class ExtraController {
         const result = await this.extraService.getDetailFromSubDistrict(subdis)
         return res.status(200).send({ data: result })
     }
+
+    @Get('detail/zip/:subdistrict')
+    async getDetailFromZipcode(@Param('subdistrict') subdis: number, @Res() res) {
+        console.log("Param =", subdis)
+        const result = await this.extraService.findZipCodeBySubDistrictID(subdis)
+        return res.status(200).send({ data: result })
+    }
+
+    @Get('detail/get/province')
+    async getProvince(@Res() res) {
+        console.log("getProvince")
+        const result = await this.extraService.getAllProvince()
+        return res.status(200).send({ data: result })
+    }
+
+    @Get('detail/get/district/:provinceId')
+    async getDistrictByProvince(@Param('provinceId') id:number, @Res() res) {
+        const result  = await this.extraService.getDistrictByProvinceId(id)
+        return res.status(200).send({ data: result })
+    }
+
+    @Get('detail/get/subdistrict/:districtId')
+    async getSubDistrictByDistrict(@Param('districtId') id:number, @Res() res) {
+        const result  = await this.extraService.getSubDistrictByDistrictId(id)
+        return res.status(200).send({ data: result })
+    }
 }
 
 export interface geoObj {

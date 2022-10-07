@@ -7,12 +7,13 @@ import { CarType } from './entity/carType.entity';
  
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
+  app.enableCors()
+  await app.listen(3002);
 }
 bootstrap();
 
 AppDataSource.initialize().then(async () => {
-  console.log(await CarType.getAll())
+  // console.log(await CarType.getAll())
 
 
   console.log("PG connected...")

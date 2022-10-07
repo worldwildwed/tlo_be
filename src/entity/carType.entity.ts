@@ -5,7 +5,7 @@ import { AppDataSource } from "../utils/data-source"
 
 @Entity()
 export class CarType {
-
+    
     @PrimaryGeneratedColumn()
     id: number
 
