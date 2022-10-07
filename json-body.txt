@@ -1,0 +1,39 @@
+{
+    "car":{
+        "plateNumber": "กก 1234",
+        "province": "กรุงเทพมหานคร",
+        "color": "สีดำ",
+        "carNumber": "1234",
+        "plateRegisterDate": "01/01/2021"
+    },
+    "owner":{
+        "firstName": "flukidong",
+        "lastName": "flukidong",
+        "idCard": "5523521839275",
+        "dateOfBirth": "15/10/1999",
+        "address": "55/332131",
+        "moo": "3",
+        "soi": "12",
+        "road": "tiwanon",
+        "subDistrict": "banmai",
+        "district": "pakkret",
+        "province": "nontaburi",
+        "zipCode": "1150",
+        "phone": "0953761234"
+    },
+    "possessor":{
+        "firstName": "Supatat",
+        "lastName": "Chanwuttinant",
+        "idCard": "1520321892882",
+        "dateOfBirth": "15/10/1999",
+        "address": "55/332131",
+        "moo": "3",
+        "soi": "12",
+        "road": "tiwanon",
+        "subDistrict": "banmai",
+        "district": "pakkret",
+        "province": "nontaburi",
+        "zipCode": "1150",
+        "phone": "0953761234"
+    }
+}
